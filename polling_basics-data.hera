@@ -1,0 +1,21 @@
+// We'll "wrap around" and re-read this after reading 1 consecutive items
+DLABEL(mmap_placeholder)
+INTEGER(0)
+INTEGER(0)
+INTEGER(0)
+INTEGER(1)
+INTEGER(1)
+INTEGER(1)
+INTEGER(1)
+INTEGER(1)
+
+DLABEL(in_op_placeholder)
+INTEGER(0)
+INTEGER(0)
+INTEGER(0)
+INTEGER(0)
+INTEGER(1)
+INTEGER(1)
+INTEGER(0)
+INTEGER(0)
+

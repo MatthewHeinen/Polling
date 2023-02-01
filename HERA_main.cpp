@@ -6,16 +6,15 @@
 
 void HERA_main()
 {
+    // Data comes first, remember...
+#include "polling_basics-data.hera"
+
     // We'll use "single-precision", i.e., one-register values, for most of this course,
     //  so we set the carry-block flag here.
-    // I label files that assume single-precision "P1", those with two-register precision "P2", etc.
 
     CBON()
 
-    // Then use a general-purpose factorial to find either 3! or 5!
-    SET(R1, 42)
-    print("R1 should be 42...")
-    print_reg(R1)
+#include "polling_basics.hera"
 
-  HALT()
+    HALT()
 }

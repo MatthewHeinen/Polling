@@ -1,0 +1,37 @@
+
+// always increment r3; increment r1 if button1 is pressed, r2 if button2 is pressed
+// in the starter files, the buttons are "simulated" by reading 0's and 1's from arrays
+
+// set up fake input
+SET(R4, mmap_placeholder)
+SET(R5, in_op_placeholder)
+SETLO(R6, 0) // offset into fake arrays
+SETLO(R7, 0x07)  // 0000 0111, after "and", tells us if we've reached a multiple of 8, reset "offset" each time
+SET(R3, 0xff00)  // only run 0x100 times
+
+LABEL(main_loop)
+ADD(Rt, R4,R6)  // to-be-replaced (get button 1)
+LOAD(Rt, 0,Rt)  // to-be-replaced
+CMP(Rt, R0)
+BZR(button1_not_pressed)
+INC(R1, 1)
+LABEL(button1_not_pressed)
+
+ADD(Rt, R5,R6)  // to-be-replaced (get button 2)
+LOAD(Rt, 0,Rt)  // to-be-replaced
+CMP(Rt, R0)
+BZR(button2_not_pressed)
+INC(R2, 1)
+LABEL(button2_not_pressed)
+
+INC(R6, 1) // increment array offset; this can be removed later
+AND(R6, R6,R7) // restrict to 0..7
+
+print(" ")    // the output will be automatically visible in hardware, but print, here
+print_reg(R1)
+print_reg(R2)
+print_reg(R3)
+
+INC(R3, 1)
+BNZ(main_loop)
+print("that's all, folks")
