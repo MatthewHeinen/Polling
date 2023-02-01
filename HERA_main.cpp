@@ -12,29 +12,10 @@ void HERA_main()
 
     CBON()
 
-    // COMPUTE AND PRINT 6! AND 9!, SEVERAL OPTIONS (UN-COMMENT THE ONES YOU WANT)
-
-    // Since HERA programs are pretty long, we'll put components into different files,
-    //  and then just use #include to bring that code into this file to be run.
-#include "factorial_6_9_P1_noloop.hera"
-#include "double_precision_demo_P2.hera"
-
-    // Now demonstrate a loop --- once again, find 6!
-#include "factorial_6_loop_P1.hera"
-
     // Then use a general-purpose factorial to find either 3! or 5!
-    SET(R1, 3)
-#include "factorial_R1_loop_P1.hera"
-    print("tried to find 3!, which should be 6...")
+    SET(R1, 42)
+    print("R1 should be 42...")
     print_reg(R1)
 
-//    SET(R1, 5)
-//#include "factorial_R1_loop_P1.hera"
-//    print("tried to find 5!, which should be 120...")
-//    print_reg(R1)
-
-    // Feel free to add an example of a double-precision loop, if you like :-)
-
-    // Now, Lab 1H: fill in
   HALT()
 }
