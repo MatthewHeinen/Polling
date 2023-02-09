@@ -3,27 +3,25 @@
 // in the starter files, the buttons are "simulated" by reading 0's and 1's from arrays
 
 // set up fake input
-SET(Rt, 0xfff0)
-LOAD(R4, 0, Rt)
-//SET(R5, in_op_placeholder)
+SET(R4, mmap_placeholder)
+SET(R5, in_op_placeholder)
 SETLO(R6, 0) // offset into fake arrays
 SETLO(R7, 0x07)  // 0000 0111, after "and", tells us if we've reached a multiple of 8, reset "offset" each time
 SET(R3, 0xff00)  // only run 0x100 times
 
 LABEL(main_loop)
-ADD(Rt, R4,R6)  // to-be-replaced (get button 1)
-LOAD(Rt, 0,Rt)  // to-be-replaced
+SET(R8, 0xfff0)
+LOAD(Rt, 0, R8)
 CMP(Rt, R0)
 BZR(button1_not_pressed)
 INC(R1, 1)
 LABEL(button1_not_pressed)
 
-//ADD(Rt, R5,R6)  // to-be-replaced (get button 2)
-//LOAD(Rt, 0,Rt)  // to-be-replaced
-//CMP(Rt, R0)
-//BZR(button2_not_pressed)
-//INC(R2, 1)
-//LABEL(button2_not_pressed)
+OPCODE(0x2C50)
+CMP(R5, R0)
+BZR(button2_not_pressed)
+INC(R2, 1)
+LABEL(button2_not_pressed)
 
 INC(R6, 1) // increment array offset; this can be removed later
 AND(R6, R6,R7) // restrict to 0..7
