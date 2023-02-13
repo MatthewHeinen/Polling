@@ -13,16 +13,16 @@ SET(R3, 0xff00)  // only run 0x100 times
 
 LABEL(main_loop)
 SET(R8, 0xfff0) // setting R8 to location 0xfff0
-LOAD(Rt, 0, R8)
-CMP(Rt, R0)
+LOAD(Rt, 0, R8) //Loading R8 into Rt
+CMP(Rt, R0) //if there is a load, we can increment the button. If not, we don't press the button
 BZ(button1_not_pressed)
 INC(R1, 1)
 LABEL(button1_not_pressed)
 
-OPCODE(0x2CC0)
-CMP(R12, R0)
+OPCODE(0x2CC0) //opcode for the special instruction which has been placed in R12
+CMP(R12, R0) //Checking if the special instruction is being accessed(is the button being pressed)
 BZ(button2_not_pressed)
-INC(R2, 1)
+INC(R2, 1) //if it is, we increment the counter. if not we don't
 LABEL(button2_not_pressed)
 
 INC(R6, 1) // increment array offset; this can be removed later
