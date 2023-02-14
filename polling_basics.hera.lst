@@ -1,0 +1,30 @@
+// .CODE:
+0/ e600    	// SETLO
+1/ e707    	// SETLO
+2/ e300    	// SETLO_FOR_SET
+3/ f3ff    	// SETHI_FOR_SET
+4/ e8f0    	// (matching labels: main_loop) SETLO_FOR_SET
+5/ f8ff    	// SETHI_FOR_SET
+6/ 4b08    	// LOAD
+7/ 3068    	// FON
+8/ b0b0    	// SUB
+9/ eb0d    	// SETLO_FOR_SET
+a/ fb00    	// SETHI_FOR_SET
+b/ 180b    	// BZ
+c/ 3180    	// INC
+d/ 2cc0    	// (matching labels: button1_not_pressed) OPCODE
+e/ 3068    	// FON
+f/ b0c0    	// SUB
+10/ eb14    	// SETLO_FOR_SET
+11/ fb00    	// SETHI_FOR_SET
+12/ 180b    	// BZ
+13/ 3280    	// INC
+14/ 3680    	// (matching labels: button2_not_pressed) INC
+15/ 8667    	// AND
+16/ 3380    	// INC
+17/ eb04    	// SETLO_FOR_SET
+18/ fb00    	// SETHI_FOR_SET
+19/ 190b    	// BNZ
+// .DATA:
+c000/ c001
+

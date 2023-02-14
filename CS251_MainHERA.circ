@@ -5,13 +5,14 @@
   <lib desc="#Wiring" name="0">
     <tool name="Splitter">
       <a name="appear" val="center"/>
-      <a name="facing" val="west"/>
-      <a name="fanout" val="5"/>
-      <a name="incoming" val="1"/>
+      <a name="bit1" val="0"/>
+      <a name="bit2" val="1"/>
+      <a name="bit3" val="1"/>
+      <a name="facing" val="south"/>
+      <a name="incoming" val="4"/>
     </tool>
     <tool name="Pin">
       <a name="appearance" val="classic"/>
-      <a name="width" val="4"/>
     </tool>
     <tool name="Probe">
       <a name="appearance" val="classic"/>
@@ -19,7 +20,7 @@
       <a name="radix" val="10unsigned"/>
     </tool>
     <tool name="Tunnel">
-      <a name="width" val="16"/>
+      <a name="facing" val="south"/>
     </tool>
     <tool name="Pull Resistor">
       <a name="facing" val="north"/>
@@ -28,7 +29,7 @@
       <a name="labelloc" val="north"/>
     </tool>
     <tool name="Constant">
-      <a name="value" val="0x20cd"/>
+      <a name="value" val="0xffff"/>
       <a name="width" val="16"/>
     </tool>
     <tool name="Power">
@@ -1142,7 +1143,7 @@
       <a name="text" val="(4) Update the flags after the arithmetic"/>
     </comp>
     <comp lib="8" loc="(1350,444)" name="Text">
-      <a name="text" val="Checking if Rb is equal to fff0 for purposes of LOAD"/>
+      <a name="text" val="Checking if Rb is equal to 0xfff0 for purposes of LOAD"/>
     </comp>
     <comp lib="8" loc="(1362,356)" name="Text">
       <a name="text" val="Checking if the opcode is getting 2C for button 2"/>
@@ -1165,11 +1166,11 @@
       <a name="font" val="SansSerif bold 12"/>
       <a name="text" val="find the location of that instruction. Also control load/store"/>
     </comp>
-    <comp lib="8" loc="(369,1161)" name="Text">
+    <comp lib="8" loc="(369,1172)" name="Text">
       <a name="text" val="Ignoring STORE for the case of button1"/>
     </comp>
     <comp lib="8" loc="(407,1202)" name="Text">
-      <a name="text" val="Checking if button two is pressed along with the appropriate to increment the counter"/>
+      <a name="text" val="Checking if button two is pressed along with the appropriate instruction to increment the counter"/>
     </comp>
     <comp lib="8" loc="(604,261)" name="Text">
       <a name="font" val="SansSerif bold 14"/>

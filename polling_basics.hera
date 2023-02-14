@@ -19,7 +19,7 @@ BZ(button1_not_pressed)
 INC(R1, 1)
 LABEL(button1_not_pressed)
 
-OPCODE(0x2CC0) //opcode for the special instruction which has been placed in R12
+OPCODE(0x2CC0) //opcode for the special instruction which has been placed in R12.
 CMP(R12, R0) //Checking if the special instruction is being accessed(is the button being pressed)
 BZ(button2_not_pressed)
 INC(R2, 1) //if it is, we increment the counter. if not we don't
